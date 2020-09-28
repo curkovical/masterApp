@@ -1,0 +1,5 @@
+docker run -t -v $(pwd):/data osrm/osrm-backend:latest osrm-extract -p /opt/car.lua /data/louisiana-latest.osm.pbf
+
+docker run -t -v $(pwd):/data osrm/osrm-backend:latest osrm-contract /data/louisiana-latest.osrm
+
+sudo docker run -t -i -p 5000:5000 -v $(pwd):/data osrm/osrm-backend:latest osrm-routed /data/louisiana-latest.osrm
